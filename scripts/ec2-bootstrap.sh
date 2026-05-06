@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 echo "=== Updating system ==="
@@ -18,7 +19,7 @@ echo "=== Installing Node.js (system-wide) ==="
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 sudo apt-get install -y nodejs build-essential
 
-echo "=== Fix ownership ==="
+echo "=== Setting ownership ==="
 sudo chown -R ubuntu:ubuntu /home/ubuntu/app
 
 echo "=== Installing dependencies & build (as ubuntu) ==="

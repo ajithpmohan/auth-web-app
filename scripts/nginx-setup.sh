@@ -17,6 +17,9 @@ server {
     listen 80;
     server_name _;
 
+    access_log /home/ubuntu/logs/nginx-access.log;
+    error_log /home/ubuntu/logs/nginx-error.log;
+
     location / {
         proxy_pass http://127.0.0.1:3000;
         proxy_http_version 1.1;
