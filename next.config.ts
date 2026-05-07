@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === "development";
+const isBackendOnSameServer = process.env.BACKEND_ON_SAME_SERVER === "true";
 
 const nextConfig: NextConfig = {
     async rewrites() {
-    if (isDev) {
+    if (!isBackendOnSameServer) {
       return [
         {
           source: "/api/:path*",
